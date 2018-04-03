@@ -67,10 +67,10 @@ This means that some method(s) in `class1` called some method(s) in `class2`.
 
 `javacg-dynamic` uses
 [javassist](http://www.csg.is.titech.ac.jp/~chiba/javassist/) to insert probes
-at method entry and exit points. To be able to analyze a class `javassist` must
-resolve all dependent classes at instrumentation time. To do so, it reads
-classes from the JVM's boot classloader. By default, the JVM sets the boot
-classpath to use Java's default classpath implementation (`rt.jar` on
+at method entry and exit points. To analyze a class `javassist` must
+resolve all dependent classes at instrumentation time. It reads
+classes from the JVM's boot classloader. JVM sets the boot
+classpath by Java's default classpath implementation (`rt.jar` on
 Win/Linux, `classes.jar` on the Mac). The boot classpath can be extended using
 the `-Xbootclasspath` option, which works the same as the traditional
 `-classpath` option. It is advisable for `javacg-dynamic` to work as expected,
